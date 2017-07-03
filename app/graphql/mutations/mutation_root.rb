@@ -11,7 +11,7 @@ Mutations::MutationRoot = GraphQL::ObjectType.define do
     resolve ->(t, args, c) {
       todo = Todo.new({title:args[:title], body:args[:body]})
       todo.done = false
-      todo.save!
+      todo.save
       todo
     }
   end

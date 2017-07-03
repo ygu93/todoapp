@@ -11,4 +11,7 @@ Types::TodoType = GraphQL::ObjectType.define do
       obj.steps
     }
   end
+  field :errors, types[types.String], "Reasons Object could not be created/updated" do
+    resolve ->(obj, args, ctx) { obj.errors.full_messages }
+  end
 end
