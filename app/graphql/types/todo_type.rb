@@ -6,7 +6,7 @@ Types::TodoType = GraphQL::ObjectType.define do
   field :body, types.String
   field :done, types.Boolean
   field :steps do
-    type Types::StepType
+    type types[Types::StepType]
     resolve -> (obj, args, ctx) {
       obj.steps
     }

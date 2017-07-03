@@ -5,7 +5,7 @@ Types::QueryType = GraphQL::ObjectType.define do
 
 
   field :allTodos do
-    type Types::TodoType
+    type types[Types::TodoType]
     description 'All Todos'
     resolve -> (obj, args, ctx) { Todo.all }
   end
@@ -18,4 +18,6 @@ Types::QueryType = GraphQL::ObjectType.define do
       Todo.find(args[:id])
     }
   end
+
+  
 end
