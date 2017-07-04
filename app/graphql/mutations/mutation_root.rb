@@ -41,4 +41,46 @@ Mutations::MutationRoot = GraphQL::ObjectType.define do
     }
 
   end
+
+  field :createStep, Types::StepType do
+    description "creates a Step."
+
+    argument :title, types.String
+    argument :description, types.String
+    argument :todo_id, types.Int
+
+    resolve ->(t, args, c) {
+      step = Step.new({title:args[:title], description:args[:description], todo_id: args[:todo_id]})
+      step.save
+      step
+    }
+  end
+
+  field :deleteStep, Types::StepType do
+    description "deletes a Step."
+
+    argument :id, types.Int
+
+    resolve -> (t, args, c) {
+      step = Step.find_by_id(args[:id])
+      step.destroy
+      step
+    }
+  end
+
+  field :updateStep, Types::StepType do
+    description "updates a Step"
+
+    argument :id, types.Int
+    argument :title, types.String
+    argument :description, types.String
+    argument :todo_id, types.Int
+
+    resolve -> (t, args, c) {
+      step = Step.find_by_id(args[:id])
+      step.update({ title:args[:title], description: args[:description], todo_id:args[:todo_id] })
+      step
+    }
+
+  end
 end

@@ -19,5 +19,18 @@ Types::QueryType = GraphQL::ObjectType.define do
     }
   end
 
-  
+  field :allSteps do
+    type types[Types::StepType]
+    description 'All Steps'
+    resolve -> (obj, args, ctx) { Step.all }
+  end
+
+  field :step do
+    type Types::StepType
+    argument :id, !types.Int
+    description "Find a Step by ID"
+    resolve -> (obj, args, ctx) {
+      Step.find(args[:id])
+    }
+  end
 end

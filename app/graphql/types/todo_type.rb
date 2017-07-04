@@ -5,12 +5,6 @@ Types::TodoType = GraphQL::ObjectType.define do
   field :title, types.String
   field :body, types.String
   field :done, types.Boolean
-  field :steps do
-    type types[Types::StepType]
-    resolve -> (obj, args, ctx) {
-      obj.steps
-    }
-  end
   field :errors, types[types.String], "Reasons Object could not be created/updated" do
     resolve ->(obj, args, ctx) { obj.errors.full_messages }
   end
