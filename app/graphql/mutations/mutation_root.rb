@@ -4,7 +4,6 @@ Mutations::MutationRoot = GraphQL::ObjectType.define do
   field :createTodo, Types::TodoType do
     description "creates a Todo."
 
-    # Use Input Types to define complex argument types
     argument :title, types.String
     argument :body, types.String
 
