@@ -7,7 +7,7 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :allTodos do
     type types[Types::TodoType]
     description 'All Todos'
-    resolve -> (obj, args, ctx) { Todo.all }
+    resolve -> (obj, args, ctx) { Todo.all.sort }
   end
 
   field :todo do

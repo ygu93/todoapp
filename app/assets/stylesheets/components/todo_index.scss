@@ -17,15 +17,45 @@
 
 li {
   list-style: none;
+  font-size: 1.15vw;
 }
 
 .app-left{
   border-radius: 5px;
   width: 47vw;
-  padding-left: 15px;
   height: 90vh;
   border: 1px solid lightgray;
   border-bottom: none;
   padding-top: 30px;
+}
+
+.todo-index{
+  margin-top: 15px;
+  border-top: 1px solid lightgray;
+}
+
+.todo-index__item{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid lightgray;
+  padding-left: 15px;
   padding-right: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.todo-index__item:hover{
+  cursor: pointer;
+  background: rgb(255, 255, 214);
+}
+
+.todo-index__item button{
+  background-color: #abd1f7;
+  color: white;
+  outline: none;
+  border-radius: 3px;
+}
+
+.todo-index__item button:hover{
+  cursor: pointer;
 }

@@ -1,13 +1,28 @@
 import TodoIndex from './todo_index';
-import { graphql, gql } from 'react-apollo';
+import { compose, graphql, gql } from 'react-apollo';
 
-export default graphql(
+const finishTodo = gql`
+  mutation finishTodo($id: Int!){
+    finishTodo(id: $id){
+      id
+      title
+      body
+      done
+    }
+  }
+`
+
+export default compose(
+graphql(
   gql`
   query {
     allTodos {
       id
       title
       body
+      done
     }
   }
-`)(TodoIndex)
+  `, ),
+  graphql(finishTodo,{ name: 'finishTodo'})
+)(TodoIndex)

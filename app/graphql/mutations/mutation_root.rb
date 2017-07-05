@@ -42,6 +42,20 @@ Mutations::MutationRoot = GraphQL::ObjectType.define do
 
   end
 
+  field :finishTodo, Types::TodoType do
+    description "marks todo as done"
+
+    argument :id, types.Int
+
+    resolve -> (t, args, c) {
+      todo = Todo.find_by_id(args[:id])
+      todo.done = !todo.done
+      todo.save
+      todo
+    }
+
+  end
+
   field :createStep, Types::StepType do
     description "creates a Step."
 
