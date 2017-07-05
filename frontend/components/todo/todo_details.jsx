@@ -41,6 +41,10 @@ class TodoDetails extends React.Component {
   }
 
   handleUpdate(){
+    if(this.state.title === ""){
+      alert('Title cannot be blank');
+      return;
+    }
     this.props.updateTodo({ variables: { id: this.props.todo.id, body: this.state.body, title: this.state.title, done: this.props.todo.done  }})
   }
 
