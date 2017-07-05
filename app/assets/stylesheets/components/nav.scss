@@ -1,0 +1,27 @@
+.header{
+  background: #0060bf;
+  height: 8vh;
+  color: white;
+  font-size: 4vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header span{
+  margin-left: 15px;
+}
+
+.quote{
+  font-size: 1vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.quote p{
+  display: inline;
+}
+
+.logo:hover{
+  cursor: pointer;
+}

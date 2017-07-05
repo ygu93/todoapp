@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoIndexContainer from './todo/todo_index_container';
 import TodoDetailsContainer from './todo/todo_details_container';
+import NavContainer from './nav/nav_container';
 
 class App extends React.Component{
   constructor(props){
@@ -23,7 +24,7 @@ class App extends React.Component{
   render(){
     return(
       <div>
-        <h1 className='header'><span>Todo App</span></h1>
+        <NavContainer/>
         <div className = 'app'>
           <TodoIndexContainer setTodo={this.setTodo.bind(this)}/>
           <TodoDetailsContainer todo={this.state.selectedTodo} unsetTodo={this.unsetTodo.bind(this)}/>

@@ -5,7 +5,7 @@ const QuoteMiddleware = ({ dispatch }) => next => action => {
   const receiveQuoteSuccess = data => dispatch(receiveQuote(data));
   switch(action.type){
     case REQUEST_QUOTE:
-      fetchAnime(receiveQuoteSuccess);
+      fetchQuote(receiveQuoteSuccess);
       return next(action);
     default:
       return next(action);
