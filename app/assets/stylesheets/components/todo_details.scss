@@ -1,0 +1,42 @@
+.todo-details{
+  font-size: 1.15vw;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  width: 48.5vw;
+  height: 90vh;
+  border-bottom: none;
+  margin-left: 1px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.todo-details__title{
+  padding-bottom: 10px;
+  font-size: 1.3vw;
+  border-bottom: 1px solid lightgray;
+}
+
+.todo-details__status{
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.todo-details__body{
+  padding-bottom: 10px;
+}
+
+.todo-details__delete{
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  outline: none;
+  border-radius: 3px;
+  height: 32px;
+  min-width: 70px;
+}
+
+.todo-details__delete:hover{
+  cursor: pointer;
+  background-color: darkred;
+}

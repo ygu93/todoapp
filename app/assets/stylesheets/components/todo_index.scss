@@ -3,6 +3,8 @@
   border-left: 15px solid #d7e7f5;
   border-right: 15px solid #d7e7f5;
   height: 92vh;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .header{
@@ -22,7 +24,7 @@ li {
 
 .app-left{
   border-radius: 5px;
-  width: 47vw;
+  width: 48.5vw;
   height: 90vh;
   border: 1px solid lightgray;
   border-bottom: none;
@@ -57,5 +59,6 @@ li {
 }
 
 .todo-index__item button:hover{
+  background-color: #2e8ceb;
   cursor: pointer;
 }

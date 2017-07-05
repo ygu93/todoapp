@@ -5,7 +5,6 @@ import CreateTodoContainer from './create_todo_container';
 class TodoIndex extends React.Component{
   constructor(props){
     super(props);
-    console.log(this.props)
   }
 
 
@@ -21,7 +20,7 @@ class TodoIndex extends React.Component{
         <CreateTodoContainer/>
         <ul className="todo-index">
           {allTodos.map((todo, idx) => (
-            <TodoIndexItem key={idx} todo={todo} finishTodo={this.props.finishTodo}/>
+            <TodoIndexItem key={idx} todo={todo} finishTodo={this.props.finishTodo} setTodo={this.props.setTodo}/>
           ))}
         </ul>
       </div>

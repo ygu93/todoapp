@@ -49,8 +49,7 @@ Mutations::MutationRoot = GraphQL::ObjectType.define do
 
     resolve -> (t, args, c) {
       todo = Todo.find_by_id(args[:id])
-      todo.done = !todo.done
-      todo.save
+      todo.update({ done: !todo.done })
       todo
     }
 
