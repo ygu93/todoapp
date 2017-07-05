@@ -3,7 +3,7 @@ import { RootReducer } from '../reducers/root_reducer.js';
 import RootMiddleware from '../middleware/root_middleware.js';
 
 const configureStore = () => (
-  createStore(RootReducer, preloadedState, RootMiddleware)
+  createStore(RootReducer, {}, RootMiddleware)
 )
 
 export default configureStore;

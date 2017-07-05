@@ -1,0 +1,25 @@
+.app{
+  border-top: 15px solid #d7e7f5;
+  border-left: 15px solid #d7e7f5;
+  border-right: 15px solid #d7e7f5;
+  height: 92vh;
+}
+
+.header{
+  background: #0060bf;
+  height: 8vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vh;
+}
+
+li {
+  list-style: none;
+}
+
+.todo-index{
+  width: 47vw;
+  border-radius: 5px;
+}

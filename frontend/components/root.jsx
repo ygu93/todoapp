@@ -10,3 +10,5 @@ const Root = ({ store }) => {
     </ApolloProvider>
   )
 }
+
+export default Root;
