@@ -2,7 +2,7 @@
 
 [Live Link](https://yue-todo-app.herokuapp.com/)
 
-This is a todo application created with a Rails/PostgreSQL backend and uses GraphQL instead in place of a REST API. The front end is created in React/Redux with the data management of the Todos done with react-apollo
+This is a todo application created with a Rails/PostgreSQL backend and uses GraphQL in place of a REST API. The front end is created in React/Redux with the data management of the Todos done with react-apollo
 
 ## GraphQL
 To modify the backend GraphQL queries are created that modify our model in place of a controller
@@ -39,12 +39,11 @@ export default compose(
   graphql(updateTodo, { name: 'updateTodo' })
 )(TodoDetails)
 ```
+## React
+For simplicity, I decided against using routes and implemented a user interface similar to Remember the Milk's, which has one page where the left half is all your todos and the right half is a particular todo. This is done by keeping the selected todo in the local state of my app component and changing it upon selection of a todo.
 
 ## Redux
-To show that react-apollo can be used in conjunction with a Redux app, I am implemented a simple redux action that fetches random quotes from an API. Upon clicking the header in the top left, a new quote will be fetched from the API and displayed at the top
-
-
-
+To show that react-apollo can be used in conjunction with a Redux app, I am implemented a simple redux data flow that fetches random quotes from an API. Upon clicking the header in the top left, a new quote will be fetched from the API and displayed at the top
 
 ## Unimplemented Features
 Adding steps/subtasks to each todo. While the backend for this feature is mostly complete, the front end that would be added on to the todo details component has not.

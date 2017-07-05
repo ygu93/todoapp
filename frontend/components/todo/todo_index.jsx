@@ -11,7 +11,7 @@ class TodoIndex extends React.Component{
   render(){
     if(!this.props.data.allTodos){
       return (
-        <div>""</div>
+        <div>Loading...</div>
       )
     }
     const { data: { allTodos } } = this.props;
