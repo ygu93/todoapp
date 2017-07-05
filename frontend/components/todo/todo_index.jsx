@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoIndexItem from './todo_index_item';
+import CreateTodoContainer from './create_todo_container';
 
 class TodoIndex extends React.Component{
   constructor(props){
@@ -15,11 +16,14 @@ class TodoIndex extends React.Component{
     }
     const { data: { allTodos } } = this.props;
     return(
-      <ul className="todo-index">
-        {allTodos.map((todo, idx) => (
-          <TodoIndexItem key={idx} todo={todo}/>
-        ))}
-      </ul>
+      <div className='app-left'>
+        <CreateTodoContainer/>
+        <ul className="todo-index">
+          {allTodos.map((todo, idx) => (
+            <TodoIndexItem key={idx} todo={todo}/>
+          ))}
+        </ul>
+      </div>
     )
   }
 }

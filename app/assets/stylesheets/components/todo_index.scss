@@ -19,7 +19,13 @@ li {
   list-style: none;
 }
 
-.todo-index{
-  width: 47vw;
+.app-left{
   border-radius: 5px;
+  width: 47vw;
+  padding-left: 15px;
+  height: 90vh;
+  border: 1px solid lightgray;
+  border-bottom: none;
+  padding-top: 30px;
+  padding-right: 15px;
 }
