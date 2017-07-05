@@ -5,6 +5,10 @@ class Nav extends React.Component{
     super(props)
   }
 
+  componentDidMount(){
+    this.props.requestQuote();
+  }
+
   renderQuote(){
     if(this.props.quote[0]){
       return(
