@@ -20,7 +20,7 @@ class TodoIndex extends React.Component{
         <CreateTodoContainer/>
         <ul className="todo-index">
           {allTodos.map((todo, idx) => (
-            <TodoIndexItem key={idx} todo={todo} finishTodo={this.props.finishTodo} setTodo={this.props.setTodo}/>
+            <TodoIndexItem key={idx} todo={todo} finishTodo={this.props.finishTodo} setTodo={this.props.setTodo} checkTodo={this.props.checkTodo}/>
           ))}
         </ul>
       </div>

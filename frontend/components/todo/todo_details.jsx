@@ -71,7 +71,7 @@ class TodoDetails extends React.Component {
                              disabled={this.state.disableTitle}></input>
           <input type='text' className='todo-details__status'
                              disabled={true}
-                             value ={`Status:  ${ todo.done ? 'Finished' : 'Unfinished'}`}></input>
+                             value ={`Status:  ${ todo.done === true ? 'Finished' : 'Unfinished'}`}></input>
           <label>Description:</label>
           <input type='text' className='todo-details__body'
                              onMouseEnter={this._toggleInput('disableBody')}

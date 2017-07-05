@@ -11,10 +11,19 @@ class App extends React.Component{
     }
     this.setTodo = this.setTodo.bind(this);
     this.unsetTodo = this.unsetTodo.bind(this);
+    this.checkTodo = this.checkTodo.bind(this);
   }
 
   setTodo(todo){
     this.setState({ selectedTodo: todo });
+  }
+
+  checkTodo(todo){
+    if(this.state.selectedTodo !== null){
+      if(todo.id === this.state.selectedTodo.id){
+        this.setState({selectedTodo: Object.assign({}, this.state.selectedTodo, { done: !this.state.selectedTodo.done})})
+      }
+    }
   }
 
   unsetTodo(){
@@ -26,7 +35,7 @@ class App extends React.Component{
       <div>
         <NavContainer/>
         <div className = 'app'>
-          <TodoIndexContainer setTodo={this.setTodo.bind(this)}/>
+          <TodoIndexContainer setTodo={this.setTodo.bind(this)} checkTodo={this.checkTodo.bind(this)}/>
           <TodoDetailsContainer todo={this.state.selectedTodo} unsetTodo={this.unsetTodo.bind(this)}/>
         </div>
       </div>
