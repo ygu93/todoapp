@@ -33,6 +33,7 @@ Mutations::MutationRoot = GraphQL::ObjectType.define do
     argument :id, types.Int
     argument :title, types.String
     argument :body, types.String
+    argument :done, types.Boolean
 
     resolve -> (t, args, c) {
       todo = Todo.find_by_id(args[:id])

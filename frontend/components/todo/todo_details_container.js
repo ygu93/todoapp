@@ -13,7 +13,7 @@ const deleteTodo = gql `
 `
 
 const updateTodo = gql `
-  mutation updateTodo($id: Int!, $title: String!, $body:String!, $done: Bool!){
+  mutation updateTodo($id: Int!, $title: String!, $body:String!, $done: Boolean!){
     updateTodo(id: $id, title: $title, body:$body, done:$done){
       id
       title
